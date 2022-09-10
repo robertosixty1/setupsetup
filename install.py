@@ -14,11 +14,9 @@ run(["git", "clone", "https://github.com/robertosixty1/nvim", f"{HOME}/.config/n
 
 
 run(["git", "clone", "https://github.com/robertosixty1/programs", f"{HOME}/.config/programs"])
-cd(f"{HOME}/.config/programs")
-run(["python", f"{HOME}/.config/programs/install.py"])
+run(["python", f"{HOME}/.config/programs/install.py"], cwd=f"{HOME}/.config/programs")
 
 run(["git", "clone", "https://github.com/robertosixty1/shells", f"{HOME}/.config/shells"])
-cd(f"{HOME}/.config/shells")
-run(["python", f"{HOME}/.config/shells/install.py"])
+run(["python", f"{HOME}/.config/shells/install.py"], cwd=f"{HOME}/.config/shells")
 
 run(["sudo", "systemctl", "enable", "--now", "cups.service"])

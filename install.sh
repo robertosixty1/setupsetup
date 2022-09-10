@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]; then
     exec sudo bash $0
 fi
 
-md -p ~/.dotfiles
+mkdir -p ~/.dotfiles
 
 pacman -Sy git
 

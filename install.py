@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-from os import getenv, listdir, chdir as cd
+from os import getenv, listdir
 from subprocess import run
 
 USER = listdir("/home")[0]
@@ -12,11 +12,13 @@ if getenv("USER") == "root":
 
 run(["git", "clone", "https://github.com/robertosixty1/nvim", f"{HOME}/.config/nvim"])
 
-
 run(["git", "clone", "https://github.com/robertosixty1/programs", f"{HOME}/.config/programs"])
 run(["python", f"{HOME}/.config/programs/install.py"], cwd=f"{HOME}/.config/programs")
 
 run(["git", "clone", "https://github.com/robertosixty1/shells", f"{HOME}/.config/shells"])
 run(["python", f"{HOME}/.config/shells/install.py"], cwd=f"{HOME}/.config/shells")
+
+run(["git", "clone", "https://github.com/robertosixty1/config", f"{HOME}/.config/config"])
+run(["python", f"{HOME}/.config/config/install.py"], cwd=f"{HOME}/.config/config")
 
 run(["sudo", "systemctl", "enable", "--now", "cups.service"])

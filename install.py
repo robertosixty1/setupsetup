@@ -8,7 +8,7 @@ USER = listdir("/home")[0]
 HOME = getenv("HOME")
 
 if getenv("USER") == "root":
-    run(["sudo", "-u", USER, "python", __file__])
+    run(["sudo", "-u", USER, "python", __file__] + argv[1:])
     exit(0)
 
 run(["git", "clone", "https://github.com/robertosixty1/nvim", f"{HOME}/.config/nvim"])

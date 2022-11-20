@@ -16,6 +16,8 @@ run(["git", "clone", "https://github.com/robertosixty1/nvim", f"{HOME}/.config/n
 run(["git", "clone", "https://github.com/robertosixty1/programs", f"{HOME}/.config/programs"])
 if argv[1] == "arch":
     run(["python", f"{HOME}/.config/programs/install.py", "arch"], cwd=f"{HOME}/.config/programs")
+elif argv[1] == "fedora":
+    run(["python", f"{HOME}/.config/programs/install.py", "fedora"], cwd=f"{HOME}/.config/programs")
 else:
     run(["python", f"{HOME}/.config/programs/install.py"], cwd=f"{HOME}/.config/programs")
 

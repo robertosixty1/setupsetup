@@ -19,7 +19,7 @@ if argv[1] == "arch":
 elif argv[1] == "fedora":
     run(["python", f"{HOME}/.config/programs/install.py", "fedora"], cwd=f"{HOME}/.config/programs")
 else:
-    run(["python", f"{HOME}/.config/programs/install.py"], cwd=f"{HOME}/.config/programs")
+    run(["python", f"{HOME}/.config/programs/install.py", "ubuntu"], cwd=f"{HOME}/.config/programs")
 
 run(["git", "clone", "https://github.com/robertosixty1/shells", f"{HOME}/.config/shells"])
 run(["python", f"{HOME}/.config/shells/install.py"], cwd=f"{HOME}/.config/shells")
